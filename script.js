@@ -70,6 +70,7 @@ function debug() {
             if (isItFunctionObject(value)) {
                 count++;
                 console.log("function object found. " + count);
+                throw new Error("It's function Object caught. thanks.");
             }
             
             const line = document.createElement('div');
@@ -79,7 +80,8 @@ function debug() {
         } catch (e) {
             // some properites throw error
             const line = document.createElement("div");
-            line.textContent = `${key} access failed: \n\n\x1b[95m${e}\x1b[0m`;
+            line.innerHTML = `${key} access failed : ${e}\n`;
+            line.style.color = "red";
 
             error_container.appendChild(line);
         }
