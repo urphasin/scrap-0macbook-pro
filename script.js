@@ -1,3 +1,9 @@
+/*
+ dP""b8 88        db    .dP"Y8 .dP"Y8 888888 .dP"Y8
+dP   `" 88       dPYb   `Ybo." `Ybo." 88__   `Ybo."
+Yb      88  .o  dP__Yb  o.`Y8b o.`Y8b 88""   o.`Y8b
+ YboodP 88ood8 dP""""Yb 8bodP' 8bodP' 888888 8bodP'
+*/
 import { User } from "./js/classes/User.js";
 
 /*
@@ -11,7 +17,6 @@ import { User } from "./js/classes/User.js";
 */
 import { isItFunctionObject } from "./js/utils/IsItFunctionObject.js";
 import { makeContainer } from "./js/utils/MakeContainer.js";
-
 
 /*
  _                 _    __                  
@@ -30,9 +35,6 @@ function onLoad() {
 }
 onLoad();
 
-
-
-
 /*
   __ _ _ __  _ __  
  / _` | '_ \| '_ \ 
@@ -42,18 +44,7 @@ onLoad();
 */
 
 
-
-
-
 console.log(document.querySelector(".hello"))
-
-function logsom() {
-    let children = document.body.children
-    let childnodes = document.body.childNodes;
-    
-    console.log(`children: ${children}`,"\n", `childnodes: ${childnodes}`);
-}
-
 function debug() {
     const el = document.createElement("p"); // what happens if not appended?
     el.classList.add("father");
@@ -95,4 +86,12 @@ function debug() {
     }
 }
 
-debug()
+
+function logsom() {
+    let children = document.body.children
+    let childnodes = document.body.childNodes;
+    
+    console.log(`children: ${children}`,"\n", `childnodes: ${childnodes}`);
+}
+
+const main = (() => {debug()})();
