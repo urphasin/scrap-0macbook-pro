@@ -49,17 +49,21 @@ function debug() {
     const el = document.createElement("p"); // what happens if not appended?
     el.classList.add("father");
     el.style.color = "orange";
+    // skip this trick dummy el code above, it affects nothing
 
     document.querySelector(".hello").appendChild(el);
 
 
     // create container
-    const container = makeContainer({identifier: "Good Container"})
+    const container = makeContainer({identifier: "Good Container"}) // insert responsive css after this line
+    container.classList.add("r-grid");
     document.body.appendChild(container);
 
 
     // error container
-    const error_container = makeContainer({identifier: "Error Container"})
+    const error_container = makeContainer({identifier: "Error Container"}) // insert responsive css after this line
+    error_container.classList.add("r-grid");
+
     document.body.appendChild(error_container);
 
     let count = 0;
@@ -75,6 +79,7 @@ function debug() {
             
             const line = document.createElement('div');
             line.textContent = `${key}: ${value}`;
+            line.classList.add("text-flow");
 
             container.appendChild(line);
         } catch (e) {
@@ -82,6 +87,7 @@ function debug() {
             const line = document.createElement("div");
             line.innerHTML = `${key} access failed : ${e}\n`;
             line.style.color = "red";
+            line.classList.add("text-flow");
 
             error_container.appendChild(line);
         }
